@@ -28,4 +28,12 @@ cardContainer.addEventListener("click", function (event) {
   if (parent.classList.contains("card-box") === true) {
     parent.remove();
   }
+
+  const interview = event.target;
+  if (interview.innerText === "INTERVIEW") {
+    if (!interview.classList.contains("counted")) {
+      interviewCount.innerText = Number(interviewCount.innerText) + 1;
+      interview.classList.add("counted");
+    }
+  }
 });
