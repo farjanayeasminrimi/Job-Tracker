@@ -1,3 +1,3 @@
-// function deleteCard(cls) {
-//   console.log(document.getElementsByClassName(cls));
-// }
+function deleteCard(cls) {
+  console.log(document.getElementsByClassName(cls));
+}

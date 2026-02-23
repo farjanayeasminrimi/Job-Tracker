@@ -7,9 +7,6 @@ const allBtn = document.getElementById("allBtn");
 const interviewSectionBtn = document.getElementById("interviewSectionBtn");
 const rejectionSectionBtn = document.getElementById("rejectionSectionBtn");
 const cardContainer = document.getElementById("card-container");
-// setting count
-totalCount.innerText = cardContainer.children.length;
-totalJobs.innerText = cardContainer.children.length;
 
 // setting bg-color to active btn
 function activeSectionBtn(id) {
@@ -26,5 +23,9 @@ function activeSectionBtn(id) {
 }
 
 cardContainer.addEventListener("click", function (event) {
-  console.log(event.target);
+  // removing card
+  const parent = event.target.parentNode.parentNode;
+  if (parent.classList.contains("card-box") === true) {
+    parent.remove();
+  }
 });
