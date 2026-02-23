@@ -29,11 +29,17 @@ cardContainer.addEventListener("click", function (event) {
     parent.remove();
   }
 
-  const interview = event.target;
-  if (interview.innerText === "INTERVIEW") {
-    if (!interview.classList.contains("counted")) {
+  const targetBtn = event.target;
+  if (targetBtn.innerText === "INTERVIEW") {
+    if (!targetBtn.classList.contains("counted")) {
       interviewCount.innerText = Number(interviewCount.innerText) + 1;
-      interview.classList.add("counted");
+      targetBtn.classList.add("counted");
+    }
+  }
+  if (targetBtn.innerText === "REJECTED") {
+    if (!targetBtn.classList.contains("counted")) {
+      rejectedCount.innerText = Number(rejectedCount.innerText) + 1;
+      targetBtn.classList.add("counted");
     }
   }
 });
