@@ -10,6 +10,10 @@ const cardContainer = document.getElementById("card-container");
 const interviewSection = document.getElementById("interview-section");
 const rejectionSection = document.getElementById("rejection-section");
 
+// total dashboard and main section
+totalCount.innerText = cardContainer.children.length;
+totalJobs.innerText = cardContainer.children.length;
+
 // setting bg-color to active btn
 function activeSectionBtn(id) {
   allBtn.classList.remove("bg-[#3B82F6]", "text-white");
@@ -31,7 +35,7 @@ cardContainer.addEventListener("click", function (event) {
     parent.remove();
   }
 
-  // counting interview and rejection
+  // counting interview
   const targetBtn = event.target;
   if (targetBtn.innerText === "INTERVIEW") {
     if (!targetBtn.classList.contains("counted")) {
@@ -54,6 +58,8 @@ cardContainer.addEventListener("click", function (event) {
       interviewSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
     }
   }
+
+  // counting  rejection
   if (targetBtn.innerText === "REJECTED") {
     if (!targetBtn.classList.contains("counted")) {
       rejectedCount.innerText = Number(rejectedCount.innerText) + 1;
