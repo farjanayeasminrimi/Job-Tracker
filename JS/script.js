@@ -49,6 +49,8 @@ cardContainer.addEventListener("click", function (event) {
       statusDiv.classList.add("counted");
 
       // Card moves to interview section
+      const noInterview = document.querySelector("#interview-section #no-interview");
+      noInterview.classList.add("hidden");
       interviewSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
     }
   }
@@ -66,6 +68,9 @@ cardContainer.addEventListener("click", function (event) {
 
       targetBtn.classList.add("counted");
       statusDiv.classList.add("counted");
+      const noRejection = document.querySelector("#rejection-section #no-rejection");
+      noRejection.classList.add("hidden");
+      rejectionSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
     }
   }
 });
