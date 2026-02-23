@@ -29,11 +29,22 @@ cardContainer.addEventListener("click", function (event) {
     parent.remove();
   }
 
+  // counting interview and rejection
   const targetBtn = event.target;
   if (targetBtn.innerText === "INTERVIEW") {
     if (!targetBtn.classList.contains("counted")) {
       interviewCount.innerText = Number(interviewCount.innerText) + 1;
+      const statusDiv =
+        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
+      statusDiv.innerHTML = ` 
+                <span
+                  class="text-green-500 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
+                >
+                  interview
+                </span>`;
+
       targetBtn.classList.add("counted");
+      statusDiv.classList.add("counted");
     }
   }
   if (targetBtn.innerText === "REJECTED") {
