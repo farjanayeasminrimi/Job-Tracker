@@ -6,7 +6,13 @@ let totalJobs = document.getElementById("totalJobs");
 const allBtn = document.getElementById("allBtn");
 const interviewSectionBtn = document.getElementById("interviewSectionBtn");
 const rejectionSectionBtn = document.getElementById("rejectionSectionBtn");
+
+const mainContainer = document.getElementById("main-section");
 const cardContainer = document.getElementById("card-container");
+
+const interviewButtons = document.getElementsByClassName("interview");
+const rejectionButtons = document.getElementsByClassName("rejection");
+
 const interviewSection = document.getElementById("interview-section");
 const rejectionSection = document.getElementById("rejection-section");
 
@@ -28,15 +34,15 @@ function activeSectionBtn(id) {
   selected.classList.add("bg-[#3B82F6]", "text-white");
 }
 
-cardContainer.addEventListener("click", function (event) {
+mainContainer.addEventListener("click", function (event) {
   // removing card
   const parent = event.target.parentNode.parentNode;
   if (parent.classList.contains("card-box") === true) {
     parent.remove();
   }
-
   // counting interview
-  const targetBtn = event.target;
+
+  /*
   if (targetBtn.innerText === "INTERVIEW") {
     if (!targetBtn.classList.contains("counted")) {
       interviewCount.innerText = Number(interviewCount.innerText) + 1;
@@ -57,8 +63,8 @@ cardContainer.addEventListener("click", function (event) {
       noInterview.classList.add("hidden");
       interviewSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
     }
-  }
-
+  } */
+  /*
   // counting  rejection
   if (targetBtn.innerText === "REJECTED") {
     if (!targetBtn.classList.contains("counted")) {
@@ -78,11 +84,67 @@ cardContainer.addEventListener("click", function (event) {
       noRejection.classList.add("hidden");
       rejectionSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
     }
-  }
+  } */
 });
 
-// toggle section
+// button click function on interview button
 
+for (let button of interviewButtons) {
+  button.addEventListener("click", function (event) {
+    const targetBtn = event.target;
+    if (!targetBtn.classList.contains("counted")) {
+      interviewCount.innerText = Number(interviewCount.innerText) + 1;
+      totalCount.innerText = Number(totalCount.innerText) - 1;
+      totalJobs.innerText = Number(totalJobs.innerText) - 1;
+
+      const statusDiv =
+        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
+      statusDiv.innerHTML = ` 
+                <span
+                  class="text-green-500 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
+                >
+                  interview
+                </span>`;
+
+      targetBtn.classList.add("counted");
+      statusDiv.classList.add("counted");
+
+      // Card moves to interview section
+      const noInterview = document.querySelector("#interview-section #no-interview");
+      noInterview.classList.add("hidden");
+      interviewSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
+    }
+  });
+}
+
+// button click function on rejection button
+for (let button of rejectionButtons) {
+  button.addEventListener("click", function (event) {
+    const targetBtn = event.target;
+    if (!targetBtn.classList.contains("counted")) {
+      rejectedCount.innerText = Number(rejectedCount.innerText) + 1;
+      totalCount.innerText = Number(totalCount.innerText) - 1;
+      totalJobs.innerText = Number(totalJobs.innerText) - 1;
+
+      const statusDiv =
+        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
+      statusDiv.innerHTML = ` 
+                <span
+                  class="text-red-400 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
+                >
+                  REJECTED
+                </span>`;
+
+      targetBtn.classList.add("counted");
+      statusDiv.classList.add("counted");
+      const noRejection = document.querySelector("#rejection-section #no-rejection");
+      noRejection.classList.add("hidden");
+      rejectionSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
+    }
+  });
+}
+
+// toggle section
 interviewSectionBtn.addEventListener("click", function () {
   cardContainer.classList.add("hidden");
   rejectionSection.classList.add("hidden");

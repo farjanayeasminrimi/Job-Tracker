@@ -72,349 +72,366 @@
         </button>
       </div>
       <!-- Card container -->
-
-      <!-- interview card container -->
-      <section id="interview-section" class="bg-white my-10 space-y-16 class hidden">
-        <div id="no-interview" class="flex flex-col justify-center items-center space-y-2">
-          <div>
-            <img src="./assets/no assignment.png" alt="no assignment available" />
+      <section id="main-section">
+        <!-- interview card container -->
+        <section id="interview-section" class="bg-white my-10 space-y-16 class hidden">
+          <div id="no-interview" class="flex flex-col justify-center items-center space-y-2">
+            <div>
+              <img src="./assets/no assignment.png" alt="no assignment available" />
+            </div>
+            <h1 class="text-[#002C5C] text-[1rem] font-medium">No jobs available</h1>
+            <p class="text-gray-400 text-[.9rem]">Check back soon for new job opportunities</p>
           </div>
-          <h1 class="text-[#002C5C] text-[1rem] font-medium">No jobs available</h1>
-          <p class="text-gray-400 text-[.9rem]">Check back soon for new job opportunities</p>
+        </section>
+        <!-- rejection section -->
+        <section id="rejection-section" class="bg-white my-10 space-y-16 class hidden">
+          <div id="no-rejection" class="flex flex-col justify-center items-center space-y-2">
+            <div>
+              <img src="./assets/no assignment.png" alt="no assignment available" />
+            </div>
+            <h1 class="text-[#002C5C] text-[1rem] font-medium">No jobs available</h1>
+            <p class="text-gray-400 text-[.9rem]">Check back soon for new job opportunities</p>
+          </div>
+        </section>
+        <div id="card-container" class="cards-container bg-white my-10 space-y-16">
+          <!-- Card 1 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">Mobile First Corp</h2>
+                <h2 class="text-gray-400 text-[1rem]">React Native Developer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">Remote </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">$130,000 - $175,000 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Build cross-platform mobile applications using React Native. Work on products
+                  used by millions of users worldwide.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">WebFlow Agency</h2>
+                <h2 class="text-gray-400 text-[1rem]">Web Designer & Developer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">Remote </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Part-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">$80,000 - $120,000</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Create stunning web experiences for high-profile clients. Must have portfolio and
+                  experience with modern web design trends.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">DataViz Solutions</h2>
+                <h2 class="text-gray-400 text-[1rem]">Data Visualization Specialist</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">Boston, MA</span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">$125,000 - $165,000 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Transform complex data into compelling visualizations. Required skills: D3.js,
+                  React, and strong analytical thinking.
+                </span>
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">CloudFirst Inc</h2>
+                <h2 class="text-gray-400 text-[1rem]">Backend Developer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">Seattle, WA </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">$140,000 - $190,000 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Design and maintain scalable backend systems using Python and AWS. Work with
+                  modern DevOps practices and cloud infrastructure.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">Innovation Labs</h2>
+                <h2 class="text-gray-400 text-[1rem]">UI/UX Engineer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">Austin, TX </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">$110,000 - $150,000 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Create beautiful and functional user interfaces for our suite of products. Strong
+                  design skills and frontend development expertise required.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">MegaCorp Solutions</h2>
+                <h2 class="text-gray-400 text-[1rem]">JavaScript Developer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">New York, NY </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block"> $130,000 - $170,00 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Build enterprise applications with JavaScript and modern frameworks. We offer
+                  competitive compensation, health insurance, and professional development
+                  opportunities.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">StartupXYZ</h2>
+                <h2 class="text-gray-400 text-[1rem]">Full Stack Engineer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">Remote </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">$120,000 - $160,000 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >Join our fast-growing startup and work on our core platform. Experience with
+                  Node.js and React required. Great benefits and equity package included.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="card-box flex justify-between">
+            <div class="left space-y-3">
+              <div>
+                <h2 class="text-[#002C5C] text-[1rem] font-bold">TechCorp Industries</h2>
+                <h2 class="text-gray-400 text-[1rem]">Senior Frontend Developer</h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-gray-400 text-[.9rem] inline-block">San Francisco, CA </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
+                <span class="text-gray-400 text-[.9rem] inline-block">• </span>
+                <span class="text-gray-400 text-[.9rem] inline-block"> $130,000 - $175,000 </span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div>
+                  <span
+                    class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
+                  >
+                    Not Applied
+                  </span>
+                </div>
+
+                <span class="text-gray-600 text-[.8rem]"
+                  >We are looking for an experienced Frontend Developer to build scalable web
+                  applications using React and TypeScript. You will work with a talented team on
+                  cutting-edge projects.</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button class="btn uppercase border border-green-500 text-green-500 interview">
+                  interview
+                </button>
+                <button class="btn uppercase text-red-400 border border-red-400 rejection">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div class="right text-gray-500">
+              <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- rejection section -->
-      <section id="rejection-section" class="bg-white my-10 space-y-16 class hidden">
-        <div id="no-rejection" class="flex flex-col justify-center items-center space-y-2">
-          <div>
-            <img src="./assets/no assignment.png" alt="no assignment available" />
-          </div>
-          <h1 class="text-[#002C5C] text-[1rem] font-medium">No jobs available</h1>
-          <p class="text-gray-400 text-[.9rem]">Check back soon for new job opportunities</p>
-        </div>
-      </section>
-      <div id="card-container" class="cards-container bg-white my-10 space-y-16">
-        <!-- Card 1 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">Mobile First Corp</h2>
-              <h2 class="text-gray-400 text-[1rem]">React Native Developer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">Remote </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">$130,000 - $175,000 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Build cross-platform mobile applications using React Native. Work on products used
-                by millions of users worldwide.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">WebFlow Agency</h2>
-              <h2 class="text-gray-400 text-[1rem]">Web Designer & Developer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">Remote </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Part-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">$80,000 - $120,000</span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Create stunning web experiences for high-profile clients. Must have portfolio and
-                experience with modern web design trends.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">DataViz Solutions</h2>
-              <h2 class="text-gray-400 text-[1rem]">Data Visualization Specialist</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">Boston, MA</span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">$125,000 - $165,000 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Transform complex data into compelling visualizations. Required skills: D3.js,
-                React, and strong analytical thinking.
-              </span>
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">CloudFirst Inc</h2>
-              <h2 class="text-gray-400 text-[1rem]">Backend Developer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">Seattle, WA </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">$140,000 - $190,000 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Design and maintain scalable backend systems using Python and AWS. Work with modern
-                DevOps practices and cloud infrastructure.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">Innovation Labs</h2>
-              <h2 class="text-gray-400 text-[1rem]">UI/UX Engineer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">Austin, TX </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">$110,000 - $150,000 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Create beautiful and functional user interfaces for our suite of products. Strong
-                design skills and frontend development expertise required.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">MegaCorp Solutions</h2>
-              <h2 class="text-gray-400 text-[1rem]">JavaScript Developer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">New York, NY </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block"> $130,000 - $170,00 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Build enterprise applications with JavaScript and modern frameworks. We offer
-                competitive compensation, health insurance, and professional development
-                opportunities.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">StartupXYZ</h2>
-              <h2 class="text-gray-400 text-[1rem]">Full Stack Engineer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">Remote </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">$120,000 - $160,000 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >Join our fast-growing startup and work on our core platform. Experience with
-                Node.js and React required. Great benefits and equity package included.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="card-box flex justify-between">
-          <div class="left space-y-3">
-            <div>
-              <h2 class="text-[#002C5C] text-[1rem] font-bold">TechCorp Industries</h2>
-              <h2 class="text-gray-400 text-[1rem]">Senior Frontend Developer</h2>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-gray-400 text-[.9rem] inline-block">San Francisco, CA </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">Full-time </span>
-              <span class="text-gray-400 text-[.9rem] inline-block">• </span>
-              <span class="text-gray-400 text-[.9rem] inline-block"> $130,000 - $175,000 </span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div>
-                <span
-                  class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase"
-                >
-                  Not Applied
-                </span>
-              </div>
-
-              <span class="text-gray-600 text-[.8rem]"
-                >We are looking for an experienced Frontend Developer to build scalable web
-                applications using React and TypeScript. You will work with a talented team on
-                cutting-edge projects.</span
-              >
-            </div>
-            <div class="flex gap-4">
-              <button class="btn uppercase border border-green-500 text-green-500">
-                interview
-              </button>
-              <button class="btn uppercase text-red-400 border border-red-400">Rejected</button>
-            </div>
-          </div>
-          <div class="right text-gray-500">
-            <i class="fa-solid fa-trash-can text-[1.3rem]"></i>
-          </div>
-        </div>
-      </div>
     </main>
     <script src="./JS/machine.js"></script>
     <script src="./JS/script.js"></script>
