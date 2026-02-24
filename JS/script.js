@@ -12,13 +12,10 @@ const cardContainer = document.getElementById("card-container");
 
 const interviewButtons = document.getElementsByClassName("interview");
 const rejectionButtons = document.getElementsByClassName("rejection");
+const deleteButtons = document.querySelectorAll(".right i");
 
 const interviewSection = document.getElementById("interview-section");
 const rejectionSection = document.getElementById("rejection-section");
-
-// total dashboard and main section
-totalCount.innerText = cardContainer.children.length;
-totalJobs.innerText = cardContainer.children.length;
 
 // setting bg-color to active btn
 function activeSectionBtn(id) {
@@ -32,88 +29,95 @@ function activeSectionBtn(id) {
 
   const selected = document.getElementById(id);
   selected.classList.add("bg-[#3B82F6]", "text-white");
+  selected.classList.remove("text-gray-500");
 }
 
-mainContainer.addEventListener("click", function (event) {
-  // removing card
-  const parent = event.target.parentNode.parentNode;
-  if (parent.classList.contains("card-box") === true) {
-    parent.remove();
+// function getStatus(card) {
+//   return card.getAttribute("data-status") || "none";
+// }
+
+function setStatus(card, status) {
+  // card.setAttribute("data-status", status);
+
+  const statusDiv = card.children[0].children[2].children[0];
+
+  if (status === "interview") {
+    statusDiv.innerHTML = `
+      <span class="text-green-500 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase">
+        interview
+      </span>`;
+  } else if (status === "rejected") {
+    statusDiv.innerHTML = `
+      <span class="text-red-400 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase">
+        REJECTED
+      </span>`;
+  } else {
+    statusDiv.innerHTML = `
+      <span class="text-[#002C5C] text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase">
+        Not Applied
+      </span>`;
   }
-  // counting interview
+}
 
-  /*
-  if (targetBtn.innerText === "INTERVIEW") {
-    if (!targetBtn.classList.contains("counted")) {
-      interviewCount.innerText = Number(interviewCount.innerText) + 1;
-      const statusDiv =
-        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
-      statusDiv.innerHTML = ` 
-                <span
-                  class="text-green-500 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
-                >
-                  interview
-                </span>`;
+function updateNoJobUI() {
+  const noInterview = document.querySelector("#interview-section #no-interview");
+  const noRejection = document.querySelector("#rejection-section #no-rejection");
 
-      targetBtn.classList.add("counted");
-      statusDiv.classList.add("counted");
+  const interviewCards = interviewSection.querySelectorAll(".card-box").length;
+  const rejectionCards = rejectionSection.querySelectorAll(".card-box").length;
 
-      // Card moves to interview section
-      const noInterview = document.querySelector("#interview-section #no-interview");
-      noInterview.classList.add("hidden");
-      interviewSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
-    }
-  } */
-  /*
-  // counting  rejection
-  if (targetBtn.innerText === "REJECTED") {
-    if (!targetBtn.classList.contains("counted")) {
-      rejectedCount.innerText = Number(rejectedCount.innerText) + 1;
-      const statusDiv =
-        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
-      statusDiv.innerHTML = ` 
-                <span
-                  class="text-red-400 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
-                >
-                  REJECTED
-                </span>`;
+  if (noInterview) noInterview.classList.toggle("hidden", interviewCards > 0);
+  if (noRejection) noRejection.classList.toggle("hidden", rejectionCards > 0);
+}
 
-      targetBtn.classList.add("counted");
-      statusDiv.classList.add("counted");
-      const noRejection = document.querySelector("#rejection-section #no-rejection");
-      noRejection.classList.add("hidden");
-      rejectionSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
-    }
-  } */
-});
+function updateCounts() {
+  const available = cardContainer.querySelectorAll(".card-box").length;
+  const interview = interviewSection.querySelectorAll(".card-box").length;
+  const rejected = rejectionSection.querySelectorAll(".card-box").length;
+
+  totalCount.innerText = available + interview + rejected;
+  interviewCount.innerText = interview;
+  rejectedCount.innerText = rejected;
+  if (!cardContainer.classList.contains("hidden")) totalJobs.innerText = available;
+  else if (!interviewSection.classList.contains("hidden")) totalJobs.innerText = interview;
+  else if (!rejectionSection.classList.contains("hidden")) totalJobs.innerText = rejected;
+}
+
+// init
+updateNoJobUI();
+updateCounts();
+
+// deleting card
+for (let button of deleteButtons) {
+  button.addEventListener("click", function () {
+    const parent = button.parentNode.parentNode;
+    parent.remove();
+    updateNoJobUI();
+    updateCounts();
+  });
+}
 
 // button click function on interview button
-
 for (let button of interviewButtons) {
   button.addEventListener("click", function (event) {
     const targetBtn = event.target;
-    if (!targetBtn.classList.contains("counted")) {
-      interviewCount.innerText = Number(interviewCount.innerText) + 1;
-      totalCount.innerText = Number(totalCount.innerText) - 1;
-      totalJobs.innerText = Number(totalJobs.innerText) - 1;
+    const card = targetBtn.parentNode.parentNode.parentNode;
 
-      const statusDiv =
-        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
-      statusDiv.innerHTML = ` 
-                <span
-                  class="text-green-500 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
-                >
-                  interview
-                </span>`;
+    setStatus(card, "interview");
 
-      targetBtn.classList.add("counted");
-      statusDiv.classList.add("counted");
+    const noInterview = document.querySelector("#interview-section #no-interview");
+    if (noInterview) noInterview.classList.add("hidden");
 
-      // Card moves to interview section
-      const noInterview = document.querySelector("#interview-section #no-interview");
-      noInterview.classList.add("hidden");
-      interviewSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
-    }
+    interviewSection.appendChild(card);
+
+    // auto switch tab
+    // cardContainer.classList.add("hidden");
+    // rejectionSection.classList.add("hidden");
+    // interviewSection.classList.remove("hidden");
+    // activeSectionBtn("interviewSectionBtn");
+
+    updateNoJobUI();
+    updateCounts();
   });
 }
 
@@ -121,26 +125,23 @@ for (let button of interviewButtons) {
 for (let button of rejectionButtons) {
   button.addEventListener("click", function (event) {
     const targetBtn = event.target;
-    if (!targetBtn.classList.contains("counted")) {
-      rejectedCount.innerText = Number(rejectedCount.innerText) + 1;
-      totalCount.innerText = Number(totalCount.innerText) - 1;
-      totalJobs.innerText = Number(totalJobs.innerText) - 1;
+    const card = targetBtn.parentNode.parentNode.parentNode;
 
-      const statusDiv =
-        targetBtn.parentNode.parentNode.parentNode.children[0].children[2].children[0];
-      statusDiv.innerHTML = ` 
-                <span
-                  class="text-red-400 text-[1rem] bg-blue-50 font-medium rounded-md py-2 px-2 inline-block uppercase counted"
-                >
-                  REJECTED
-                </span>`;
+    setStatus(card, "rejected");
 
-      targetBtn.classList.add("counted");
-      statusDiv.classList.add("counted");
-      const noRejection = document.querySelector("#rejection-section #no-rejection");
-      noRejection.classList.add("hidden");
-      rejectionSection.appendChild(targetBtn.parentNode.parentNode.parentNode);
-    }
+    const noRejection = document.querySelector("#rejection-section #no-rejection");
+    if (noRejection) noRejection.classList.add("hidden");
+
+    rejectionSection.appendChild(card);
+
+    // auto switch tab
+    // interviewSection.classList.add("hidden");
+    // cardContainer.classList.add("hidden");
+    // rejectionSection.classList.remove("hidden");
+    // activeSectionBtn("rejectionSectionBtn");
+
+    updateNoJobUI();
+    updateCounts();
   });
 }
 
@@ -149,14 +150,22 @@ interviewSectionBtn.addEventListener("click", function () {
   cardContainer.classList.add("hidden");
   rejectionSection.classList.add("hidden");
   interviewSection.classList.remove("hidden");
+  activeSectionBtn("interviewSectionBtn");
+  updateCounts();
 });
+
 allBtn.addEventListener("click", function () {
   interviewSection.classList.add("hidden");
   rejectionSection.classList.add("hidden");
   cardContainer.classList.remove("hidden");
+  activeSectionBtn("allBtn");
+  updateCounts();
 });
+
 rejectionSectionBtn.addEventListener("click", function () {
   interviewSection.classList.add("hidden");
   cardContainer.classList.add("hidden");
   rejectionSection.classList.remove("hidden");
+  activeSectionBtn("rejectionSectionBtn");
+  updateCounts();
 });
